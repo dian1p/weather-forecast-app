@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/892ca08044.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+      integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="frame">
+        <form id="signup-form">
+          <input
+            class="col-4"
+            type="text"
+            placeholder="search city"
+            autocomplete="on"
+            id="city-input"
+          />
+          <button type="submit">
+            <i class="fas fa-plus"></i>
+          </button>
+          <input id="current-button" type="submit" value="Current" />
+          <h2 id="show-city">
+            CITY
+          </h2>
+        </form>
+        <img src="src/images/images.jpeg" />
+        <section>
+          <div class="left">
+            <h1 id="temp">°C</h1>
+
+            <br />
+            <p id="get-date">
+              Mon, 25-11-2019
+            </p>
+            <span id="get-time">
+              20:00
+            </span>
+          </div>
+          <div class="right">
+            <h3>Detail:</h3>
+            <hr />
+            <ul>
+              <li>Humidity: <span id="humid"></span>%</li>
+              <li>Wind: <span id="winds"></span>km/hr</li>
+              <li>Visibility: <span id="visible"></span>km</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="card" style="width: 8rem;float:left; margin-right: 15px;">
+          <div class="card-body">
+            <h5 id="first-next" class="card-title" style="text-align: center;">
+              Tue
+            </h5>
+            <img
+              src="src/images/cloudy.png"
+              alt=""
+              style="width:90px; margin-bottom: 20px;"
+            />
+            <p
+              id="first-temp"
+              class="card-text"
+              style="text-align: center; font-size: 20px;"
+            >
+              10°C
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 8rem;float:left; margin-right: 15px;">
+          <div class="card-body">
+            <h5 id="second-next" class="card-title" style="text-align: center;">
+              Wed
+            </h5>
+            <img
+              src="src/images/cloudy.png"
+              alt=""
+              style="width:90px; margin-bottom: 20px;"
+            />
+            <p
+              id="second-temp"
+              class="card-text"
+              style="text-align: center; font-size: 20px;"
+            >
+              7°C
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 8rem;float:left; margin-right: 15px;">
+          <div class="card-body">
+            <h5 id="third-next" class="card-title" style="text-align: center;">
+              Thu
+            </h5>
+            <img
+              src="src/images/cloudy.png"
+              alt=""
+              style="width:90px; margin-bottom: 20px;"
+            />
+            <p
+              id="third-temp"
+              class="card-text"
+              style="text-align: center; font-size: 20px;"
+            >
+              7°C
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 8rem;float:left; margin-right: 15px;">
+          <div class="card-body">
+            <h5 id="fourth-next" class="card-title" style="text-align: center;">
+              Fri
+            </h5>
+            <img
+              src="src/images/cloudy.png"
+              alt=""
+              style="width:90px; margin-bottom: 20px;"
+            />
+            <p
+              id="fourth-temp"
+              class="card-text"
+              style="text-align: center; font-size: 20px;"
+            >
+              11°C
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 8rem;">
+          <div class="card-body">
+            <h5 id="fifth-next" class="card-title" style="text-align: center;">
+              Sat
+            </h5>
+            <img
+              src="src/images/cloudy.png"
+              alt=""
+              style="width:90px; margin-bottom: 20px;"
+            />
+            <p
+              id="fifth-temp"
+              class="card-text"
+              style="text-align: center; font-size: 20px;"
+            >
+              7°C
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+  }
+  .frame {
+    margin: 10px 330px;
+    background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+    padding: 30px;
+  }
+  form {
+    margin-top: 20px;
+    text-align: center;
+  }
+  h2 {
+    padding: 20px;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+  
+  .left {
+    text-align: center;
+    line-height: 1.6;
+    float: left;
+    width: 200px;
+    margin: 60px;
+  }
+  .right {
+    float: right;
+    word-spacing: 3em;
+    width: 200px;
+    margin: 57px;
+  }
+  
