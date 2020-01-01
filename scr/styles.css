@@ -13,11 +13,13 @@ body {
   h2 {
     padding: 20px;
   }
-  img {
+  .image1 {
     display: block;
     margin: 0 auto;
     border-radius: 15px;
+    width: 200px;
   }
+ 
   li {
     list-style: none;
     margin: 0;

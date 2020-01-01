@@ -1,16 +1,17 @@
 function getTemperature(response) {
-    let temperature = document.querySelector("#temp");
-    temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
-    let humidity = document.querySelector("#humid");
-    humidity.innerHTML = response.data.main.humidity;
-    let wind = document.querySelector("#winds");
-    wind.innerHTML = response.data.wind.speed;
-    let visibility = document.querySelector("#visible");
-    visibility.innerHTML = response.data.visibility / 1000;
-    let city = document.querySelector("#show-city");
-    city.innerHTML = response.data.name;
-    temperatureCelcius = response.data.main.temp;
-      
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  let humidity = document.querySelector("#humid");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#winds");
+  wind.innerHTML = response.data.wind.speed;
+  let visibility = document.querySelector("#visible");
+  visibility.innerHTML = response.data.visibility / 1000;
+  let city = document.querySelector("#show-city");
+  city.innerHTML = response.data.name;
+  temperatureCelcius = response.data.main.temp;
+  let iconWeather = document.querySelector("#icon");
+  iconWeather.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);  
   }
   
 let temperatureCelcius = null;
