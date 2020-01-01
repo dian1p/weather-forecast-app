@@ -41,7 +41,34 @@ function changeFahrenheit(event) {
     let showCity = searchCity.value;
     let url = `https://api.openweathermap.org/data/2.5/weather/?q=${showCity}&appid=${key}&units=metric`;
     axios.get(url).then(getTemperature);
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${showCity}&appid=${key}&units=metric`;
+    axios.get(apiUrl).then(getForecast);
+
     navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
+  function getForecast(response){
+    let firstTemp = document.querySelector("#first-temp");
+    firstTemp.innerHTML = `${Math.round(response.data.list[12].main.temp)}°C`;
+    let firstIcon = document.querySelector("#first-icon");
+    firstIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png`)
+
+    let secondTemp = document.querySelector("#second-temp");
+    secondTemp.innerHTML = `${Math.round(response.data.list[20].main.temp)}°C`;
+    let secondIcon = document.querySelector("#second-icon");
+    secondIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png`)
+
+    let thirdTemp = document.querySelector("#third-temp");
+    thirdTemp.innerHTML = `${Math.round(response.data.list[28].main.temp)}°C`;
+    let thirdIcon = document.querySelector("#third-icon");
+    thirdIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png`)
+
+    let fourthTemp = document.querySelector("#fourth-temp");
+    fourthTemp.innerHTML = `${Math.round(response.data.list[36].main.temp)}°C`;
+    let fourthIcon = document.querySelector("#fourth-icon");
+    fourthIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[36].weather[0].icon}@2x.png`);
+    let fifthTemp = document.querySelector("#fifth-temp");
+    fifthTemp.innerHTML = `${Math.round(response.data.list[44].main.temp)}°C`;
   }
   
   function showPosition(position) {
@@ -94,7 +121,8 @@ function changeFahrenheit(event) {
   
   function days() {
     for (let i = 0; i < day.length; i++) {
-      return day[(now.getDay() + 1 + i++) % 7];
+      return day[(now.getDay() + 1 + i++) % 7] ;
+      
     }
   }
   
@@ -124,12 +152,28 @@ function changeFahrenheit(event) {
   }
   let fourthDay = document.querySelector("#fourth-next");
   fourthDay.innerHTML = thirdNextDay();
+
   
-  function fourthNextDay() {
-    for (let i = 0; i < day.length; i++) {
-      return day[(now.getDay() + 5 + i++) % 7];
-    }
-  }
-  let fifthDay = document.querySelector("#fifth-next");
-  fifthDay.innerHTML = fourthNextDay();
+
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     
