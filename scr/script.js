@@ -5,12 +5,32 @@ function getTemperature(response) {
     humidity.innerHTML = response.data.main.humidity;
     let wind = document.querySelector("#winds");
     wind.innerHTML = response.data.wind.speed;
-    let description = document.querySelector("#visible");
-    description.innerHTML = response.data.visibility / 1000;
+    let visibility = document.querySelector("#visible");
+    visibility.innerHTML = response.data.visibility / 1000;
     let city = document.querySelector("#show-city");
     city.innerHTML = response.data.name;
+    temperatureCelcius = response.data.main.temp;
+      
   }
   
+let temperatureCelcius = null;
+
+function changeCelcius(event) {
+  event.preventDefault();
+  toCelcius.classList.add("active");
+  toFahrenheit.classList.remove("active");
+  let celcius = document.querySelector("#temp");
+  celcius.innerHTML = `${Math.round(temperatureCelcius)}°C`;
+}
+
+function changeFahrenheit(event) {
+  event.preventDefault();
+  toCelcius.classList.remove("active");
+  toFahrenheit.classList.add("active");
+  let fahrenheit = document.querySelector("#temp");
+  fahrenheit.innerHTML = `${Math.round((temperatureCelcius * 9) / 5 + 32)}°F`;
+}
+
   function submitCity(event) {
     event.preventDefault();
     let key = "88cb0b2a18f4a84cc455641324b32a73";
@@ -36,6 +56,13 @@ function getTemperature(response) {
   
   let currentLocation = document.querySelector("#current-button");
   currentLocation.addEventListener("submit", submitCity);
+
+  let toCelcius = document.querySelector("#temp-cel");
+  toCelcius.addEventListener("click", changeCelcius);
+  
+  let toFahrenheit = document.querySelector("#temp-fah");
+  toFahrenheit.addEventListener("click", changeFahrenheit);
+
   let now = new Date();
   let year = now.getFullYear();
   let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

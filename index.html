@@ -27,11 +27,12 @@
             placeholder="search city"
             autocomplete="on"
             id="city-input"
+            autocomplete="off"
           />
           <button type="submit">
             <i class="fas fa-plus"></i>
           </button>
-          <input id="current-button" type="submit" value="Current" />
+          <input id="current-button" type="submit" value="Current"/>
           <h2 id="show-city">
             CITY
           </h2>
@@ -40,7 +41,8 @@
         <section>
           <div class="left">
             <h1 id="temp">°C</h1>
-
+            <a id="temp-cel" href="" class="active">°C</a> |
+            <a id="temp-fah" href="">°F</a>
             <br />
             <p id="get-date">
               Mon, 25-11-2019
@@ -156,7 +158,7 @@
           </div>
         </div>
         <br>
-        <p><a href="https://github.com/dian1p/weather-forecast-app" target="blank">
+        <p><a href="https://github.com/dian1p/weather-forecast-app" target="_blank">
           Open source code
         </a> by Dian</p>
         <script src="./scr/script.js"></script> 
