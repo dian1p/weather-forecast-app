@@ -31,6 +31,14 @@ function changeFahrenheit(event) {
   let fahrenheit = document.querySelector("#temp");
   fahrenheit.innerHTML = `${Math.round((temperatureCelcius * 9) / 5 + 32)}°F`;
 }
+function search (showCity) {
+  let key = "88cb0b2a18f4a84cc455641324b32a73";
+  let url = `https://api.openweathermap.org/data/2.5/weather/?q=${showCity}&appid=${key}&units=metric`;
+  axios.get(url).then(getTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${showCity}&appid=${key}&units=metric`;
+  axios.get(apiUrl).then(getForecast);
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
 
   function submitCity(event) {
     event.preventDefault();
@@ -157,6 +165,8 @@ function changeFahrenheit(event) {
   let fourthDay = document.querySelector("#fourth-next");
   fourthDay.innerHTML = thirdNextDay();
 
+  search("Amsterdam");
+
   
 
   
@@ -180,4 +190,4 @@ function changeFahrenheit(event) {
 
 
     
-     
+  

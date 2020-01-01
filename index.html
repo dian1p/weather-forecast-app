@@ -18,8 +18,8 @@
   </head>
 
   <body>
-    <div id="app">
-      <div class="frame">
+    <div >
+       <div class="frame">
         <form id="signup-form">
           <input
             class="col-4"
@@ -34,120 +34,61 @@
           </button>
           <input id="current-button" type="submit" value="Current"/>
           <h2 id="show-city">
-            CITY
+            
           </h2>
         </form>
         <img class="image1" src="http://pluspng.com/img-png/earth-png-1600.png" id="icon" />
-        <section>
           <div class="left">
             <h1 id="temp">°C</h1>
             <a id="temp-cel" href="" class="active">°C</a> |
             <a id="temp-fah" href="">°F</a>
             <br />
-            <p id="get-date">
-              
-            </p>
-            <span id="get-time">
-              
-            </span>
+            <p id="get-date"></p>
+            <span id="get-time"></span>
           </div>
           <div class="right">
             <h3>Detail:</h3>
-            <hr />
+            <hr />   
             <ul>
               <li>Humidity: <span id="humid"></span>%</li>
               <li>Wind: <span id="winds"></span>km/hr</li>
               <li>Visibility: <span id="visible"></span>km</li>
             </ul>
           </div>
-        </section>
-
-        <div class="card" style="width: 10rem;float:left; margin-left: 15px;margin-right: 15px;">
-          <div class="card-body">
-            <h5 id="first-next" class="card-title" style="text-align: center;">
-              Tue
-            </h5>
-            <img class="image"
-              src=""
-              alt=""
-              id="first-icon"
-              style="width:90px; margin-bottom: 20px;"
-            />
-            <p
-              id="first-temp"
-              class="card-text"
-              style="text-align: center; font-size: 20px;"
-            >
-              °C
-            </p>
+          <div>
+          <div class="forecast">
+          <div class="row">
+            <div class="col" id="first-next">Tue</div>
+            <div class="col" id="second-next">Wed</div>
+            <div class="col" id="third-next">Thu</div>
+            <div class="col" id="fourth-next">Fri</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <img id="first-icon" src="" alt=""></img>
+              </div>
+              <div class="col">
+              <img id="second-icon" src="" alt=""></img>
+            </div>
+            <div class="col">
+              <img id="third-icon" src="" alt=""></img>
+            </div>
+            <div class="col">
+              <img id="fourth-icon" src="" alt=""></img>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="first-temp">°C</div>
+            <div class="col" id="second-temp">°C</div>
+            <div class="col" id="third-temp">°C</div>
+            <div class="col" id="fourth-temp">°C</div>
+          </div> 
           </div>
         </div>
-        <div class="card" style="width: 10rem;float:left; margin-right: 15px;">
-          <div class="card-body">
-            <h5 id="second-next" class="card-title" style="text-align: center;">
-              Wed
-            </h5>
-            <img
-              src=""
-              alt=""
-              id="second-icon"
-              style="width:90px; margin-bottom: 20px;"
-            />
-            <p
-              id="second-temp"
-              class="card-text"
-              style="text-align: center; font-size: 20px;"
-            >
-              °C
-            </p>
-          </div>
-        </div>
-        <div class="card" style="width: 10rem;float:left; margin-right: 15px;">
-          <div class="card-body">
-            <h5 id="third-next" class="card-title" style="text-align: center;">
-              Thu
-            </h5>
-            <img
-              src=""
-              alt=""
-              id="third-icon"
-              style="width:90px; margin-bottom: 20px;"
-            />
-            <p
-              id="third-temp"
-              class="card-text"
-              style="text-align: center; font-size: 20px;"
-            >
-              °C
-            </p>
-          </div>
-        </div>
-        <div class="card" style="width: 10rem;float:left; margin-right: 15px;">
-          <div class="card-body">
-            <h5 id="fourth-next" class="card-title" style="text-align: center;">
-              Fri
-            </h5>
-            <img
-              src=""
-              alt=""
-              id="fourth-icon"
-              style="width:90px; margin-bottom: 20px;"
-            />
-            <p
-              id="fourth-temp"
-              class="card-text"
-              style="text-align: center; font-size: 20px;"
-            >
-              °C
-            </p>
-          </div>
-        </div> 
-        
       </div>
     </div>
     <p class="source"><a href="https://github.com/dian1p/weather-forecast-app" target="_blank">
-      Open source code
-    </a> by Dian</p>
+      Open source code</a> by Dian</p>
     <script src="./scr/script.js"></script> 
   </body>
 </html>
