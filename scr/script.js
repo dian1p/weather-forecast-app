@@ -94,12 +94,15 @@ function changeFahrenheit(event) {
   let now = new Date();
   let year = now.getFullYear();
   let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let month = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+  let month = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
   
   function formatDate(now) {
-    return `${day[now.getDay()]}, ${now.getDate()}-${
-      month[now.getMonth()]
-    }-${year}`;
+    let date = now.getDate();
+    if(date < 10){
+      return `${day[now.getDay()]}, 0${date}-${
+        month[now.getMonth()]}-${year}`;
+    }
+    
   }
   
   let date = document.querySelector("#get-date");
@@ -113,6 +116,7 @@ function changeFahrenheit(event) {
     let ampm = hours >= 12 ? "pm" : "am";
     hours = hours % 12;
     hours = hours ? hours : 12;
+    hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     return `${hours}:${minutes} ${ampm}`;
   }
