@@ -1,4 +1,5 @@
 function getTemperature(response) {
+  let timeZone = response.data.timezone;
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
   let humidity = document.querySelector("#humid");
@@ -95,23 +96,23 @@ function changeFahrenheit(event) {
   
   let toFahrenheit = document.querySelector("#temp-fah");
   toFahrenheit.addEventListener("click", changeFahrenheit);
-
-  let now = new Date();
+  
+  let now = new Date()
   let year = now.getFullYear();
   let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let month = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
   
   function formatDate(now) {
     let date = now.getDate();
+    
     if(date < 10){
       return `${day[now.getDay()]}, 0${date}-${
         month[now.getMonth()]}-${year}`;
-    }
-    
+    } 
   }
   
-  let date = document.querySelector("#get-date");
-  date.innerHTML = formatDate(now);
+  let dates = document.querySelector("#get-date");
+  dates.innerHTML = formatDate(now);
   
   function formatTime(now) {
     let hours = now.getHours();
@@ -127,7 +128,8 @@ function changeFahrenheit(event) {
   }
   let hour = document.querySelector("#get-time");
   hour.innerHTML = formatTime(now);
-  
+
+
   function days() {
     for (let i = 0; i < day.length; i++) {
       return day[(now.getDay() + 1 + i++) % 7] ;
